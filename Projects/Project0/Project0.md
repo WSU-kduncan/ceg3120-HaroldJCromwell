@@ -64,6 +64,6 @@ Entries that are currently crossed out we will either get to later in the course
 ## Resources
 
 - [Pro Git Book](https://git-scm.com/book/en/v2)
-- [ATLASSIAN](www.atlassian.com/git/tutorials)
+- [ATLASSIAN](https://www.atlassian.com)
 - [GitLab Cheat Sheet](about.gitlab.com/images/press/git-cheat-sheet.pdf)
 
