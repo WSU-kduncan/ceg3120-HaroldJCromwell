@@ -23,7 +23,7 @@ Entries that are currently crossed out we will either get to later in the course
   - `git rm "file"`
 - commit
   - Creates a commit of all changes that were added
-  - `git commit -m "Message here"
+  - `git commit -m "Message here"`
 - push
   - Takes committed changes to the remote directory
   - `git push`
