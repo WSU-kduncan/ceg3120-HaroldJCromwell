@@ -1,10 +1,10 @@
-mport os
+import os
 
 import discord
 import random
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('project01.env')
 #print(os.getenv('DISCORD_TOKEN'))
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
