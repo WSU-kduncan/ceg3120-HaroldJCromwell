@@ -2,7 +2,7 @@ import os
 
 import discord
 import random
-from dotenv import load_dotenv
+from dotenv import load_dotenv 
 
 load_dotenv('project01.env')
 #print(os.getenv('DISCORD_TOKEN'))
@@ -45,9 +45,20 @@ async def on_message(message):
         'A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.',
     ]
 
+    time_quotes = [
+        'Time to buy a watch',
+        'Time to eat!!!',
+        'Time to sleep...zzz',
+        'Time to do homework...nah',
+    ]
+
     if message.content == 'towel!':
         #response = random.choice(brooklyn_99_quotes)
         response = random.choice(hitchhiker_quotes)
+        await message.channel.send(response)
+
+    if message.content == '!time':
+        response = random.choice(time_quotes)
         await message.channel.send(response)
 
 client.run(TOKEN)
