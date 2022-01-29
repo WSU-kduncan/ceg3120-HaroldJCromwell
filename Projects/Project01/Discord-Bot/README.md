@@ -34,4 +34,4 @@ DISCORD_TOKEN={your-bot-token}
 ### Research
 ## Solution
 - A solution that work and that currently in use is hosting services that you can run the bots remotely so that the bot doesn't tax the owner's c0mputer. These services charge a monthly fee that isn't too expensive and give the server space required to run the bot. 
-- Here is a source that lists some of the current hosting services (This article focuses on discord uses) [Geekflare](https://www.https://geekflare.com/discord-bot-hosting/)
+- Here is a source that lists some of the current hosting services (This article focuses on discord uses) [Geekflare](https://geekflare.com/discord-bot-hosting/)
