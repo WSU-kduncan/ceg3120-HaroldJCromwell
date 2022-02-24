@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Cromwell CF Template to create VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address
-        Testing area for AWS: This template builds a linux VM for CEG 3120 @ WSU.
+Description: >-
+   Cromwell CF Template to create VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address
 Parameters:
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
@@ -24,25 +24,25 @@ Mappings:
       HVM64: ami-07d0cf3af28718ef8
       HVMG2: NOT_SUPPORTED
 Resources:
-  VPC: 10.0.0.0/24
+  VPC:
     Type: 'AWS::EC2::VPC'
     Properties:
-      CidrBlock: 10.0.0.0/16
+      CidrBlock: 10.0.0.0/24
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
           Value: Cromwell-CF-VPC
-  Subnet: 10.0.0.0/28
+  Subnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPC
-      CidrBlock: 10.0.0.0/24
+      CidrBlock: 10.0.0.0/28
       Tags:
         - Key: Application
           Value: !Ref 'AWS::StackId'
-	- Key: Name
-	  Value: Cromwell-CF-Subnet
+        - Key: Name
+          Value: Cromwell-CF-Subnet
   InternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
@@ -50,7 +50,7 @@ Resources:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
-          Value: Cromwell-CF-InternetGateway
+          Value: Cromwell-CF-IG
   AttachGateway:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
@@ -126,7 +126,7 @@ Resources:
         - Key: Application
           Value: !Ref 'AWS::StackId'
         - Key: Name
-          Value: Cromwell-CF-Instance
+          Value: Cromwell-CF-instance
       NetworkInterfaces:
         - GroupSet:
             - !Ref Lab1SecurityGroup
@@ -134,7 +134,7 @@ Resources:
           DeviceIndex: '0'
           DeleteOnTermination: 'true'
           SubnetId: !Ref Subnet
-          PrivateIpAddress: 10.0.0.25
+          PrivateIpAddress: 10.0.0.12
       UserData:
         Fn::Base64:
           !Sub |
@@ -143,7 +143,7 @@ Resources:
             apt-get install -y \
               git \
               python3 \
-              pip3 \
+              python3-pip \
               htop \
               sl && \
             echo "This is from the CF template" > /home/ubuntu/hello.txt && \
