@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: Cromwell CF Template to create VPC, allow SSH access from trusted networks, and create a single instance with an Elastic IP address
-  Testing area for AWS: This template builds a linux VM for CEG 2350 @ WSU.
+        Testing area for AWS: This template builds a linux VM for CEG 3120 @ WSU.
 Parameters:
   KeyName:
     Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
@@ -105,6 +105,10 @@ Resources:
           FromPort: '1'
           ToPort: '65535'
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 192.168.0.0/24
   PublicUbuntuInstance:
     Type: 'AWS::EC2::Instance'
     DependsOn: AttachGateway
@@ -138,6 +142,8 @@ Resources:
             apt-get update && \
             apt-get install -y \
               git \
+              python3 \
+              pip3 \
               htop \
               sl && \
             echo "This is from the CF template" > /home/ubuntu/hello.txt && \
