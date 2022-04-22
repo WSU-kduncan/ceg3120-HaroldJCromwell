@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<, initial-scale=1.0">
+    <title>Document</title>
+    <link  href="css/main.css"  rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <h1>Contact Form</h1>
+        <h2>Fill in the Information Below</h2>
+        <form action="scripts/process.php" method="post">
+        <div>
+            <label> Your Name:
+            <input type="text" name="name" placeholder="Enter Name Here">
+            </label>
+            <br />
+
+            <label>Your Email:
+            <input type="email" name="email" placeholder="Enter Email Here">
+            </label>
+            <br />
+
+            <label>Your Phone:
+            <input type="tel" name="phoneNumber" placeholder="Enter Phone Number Here">
+            <br />
+            </label>
+            
+            <label>Remember Me:
+            <input type="checkbox" name="rm" value="Remembered">
+            <br />
+            </label>
+
+            <label>Messages:
+            <textarea cols="23" rows="10" name="messages"></textarea>
+            <br />
+            </label>
+</div>
+
+            <input type="submit" value="Submit Form">
+            
+        </form>
+    </main>
+</body>
+</html>
