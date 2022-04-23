@@ -3,6 +3,6 @@
     "id": "redeploy",
     "execute-command": "/scripts/redeploy.sh",
     "command-working-directory": "/webhook",
-    "response-message": "Redeploying API server."
+    "response-message": "Response."
   }
 ]
