@@ -23,7 +23,7 @@
 2. Install the following packages: docker-ce, docker-ce-cli, containerd.io.
 	- Run the command sudo apt-get install docker-ce docker-ce-cli containerd.io
 3. You are now ready to start creating containers and images but to be safe try to run the hello-world image
-	- Run the command `sudo docker run hello-world
+	- Run the command `sudo docker run hello-world`
 #### How to build and run the container
 1. To build the container with just a command I ran `docker run -dit --name project05 -p 8080:80 -v /website:/usr/local/apache2/htdocs/ httpd:2.4`
 	- I ran this assuming the the html file I needed was in the website folder
