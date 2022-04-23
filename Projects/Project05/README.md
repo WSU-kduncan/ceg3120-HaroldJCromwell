@@ -51,7 +51,7 @@
 #### How to Authenticate with DockerHub via CLI using Dockhub credentials
 1. Dockerhub uses tokens to authenticate. This is a more secure way of authentication and you can see more people moving towards this way. 
 2. In order to get you token you will need to go to `Account Settings` then to `Security`.
-3. Click on `New Acces Token`
+3. Click on `New Access Token`
 4. Name the token and give the permissions you want then hit `Create`.
 5. Save this token it will be needed.
 #### How to set Github Secrets
